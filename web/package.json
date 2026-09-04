@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "build:app": "npm run build && python ../backend/build.py"
+    "build:app": "npm run build && sleep 1 && python ../main.py"
   },
   "dependencies": {
     "react": "^19.2.8",

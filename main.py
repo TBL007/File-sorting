@@ -5,19 +5,19 @@ from datetime import datetime
 eel.init('public')
 
 @eel.expose
-def getFiles(path):
+def getFiles(path,children:bool):
     folder = Path(path)
     
     def scan_directory(directory:Path, children:bool):
         items = []
 
         for item in directory.iterdir(): 
-            if item.is_dir() & children:
+            if item.is_dir() and children:
                 items.append({
                     "name": item.name,
                     "path": str(item),
                     "type": "directory",
-                    "children": scan_directory(item),
+                    "children": scan_directory(item, children),
                 })
             elif item.is_dir():
                 items.append({
@@ -37,11 +37,14 @@ def getFiles(path):
                     "size": stat.st_size,
                     "modified": stat.st_mtime,
                     "created": stat.st_birthtime,
+                    
                 })
+        
         return items
-    
-    return scan_directory(folder)
+
+    return scan_directory(folder, children)
 
         
 eel.start("")
+
 
