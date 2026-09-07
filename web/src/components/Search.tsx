@@ -17,7 +17,6 @@ function Search({ items, setFilteredFiles }: SearchProps) {
         })
         .flat();
     };
-    console.log(flatItems(items));
 
     const filteredItems = flatItems(items).filter((file) => {
       if (
@@ -28,7 +27,7 @@ function Search({ items, setFilteredFiles }: SearchProps) {
 
       return false;
     });
-    console.log("filtered:", filteredItems);
+
     setFilteredFiles(filteredItems);
   };
 

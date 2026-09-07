@@ -11,7 +11,7 @@ function App() {
 
   const getFiles = async () => {
     const files = await window.eel.getFiles(children, path)();
-    console.log(files);
+    // console.log(files);
     setFiles(files);
   };
 
@@ -22,10 +22,12 @@ function App() {
   useEffect(() => {
     alert("ha children disabled hvis du er i store mapper");
   }, []);
+
   const submitForm = (e: any) => {
     e.preventDefault();
     getFiles();
   };
+
   const removeDir = () => {
     setPath((prev) => {
       const result = prev
