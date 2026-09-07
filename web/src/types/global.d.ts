@@ -14,4 +14,5 @@ interface File {
   extension?: string;
   modified?: number;
   size?: number;
+  children?: Array<File>;
 }
