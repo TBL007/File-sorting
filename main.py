@@ -32,7 +32,7 @@ def getFiles(children:bool,path="C:\\"):
         except PermissionError:
             # Can't access this directory at all
             return items
-        print(entries)
+        
         for item in entries:
             
             try:

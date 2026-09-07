@@ -37,13 +37,13 @@ function Search({ items, setFilteredFiles }: SearchProps) {
   }, [search, items]);
 
   return (
-    <div>
+    <>
       <input
         placeholder="search"
         value={search}
         onChange={(e) => setSearch(e.currentTarget.value)}
       />
-    </div>
+    </>
   );
 }
 export default Search;
