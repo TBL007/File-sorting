@@ -1,3 +1,8 @@
+# setup
+
+- clone repository
+- run [exe file](/dist/main.exe)
+
 # File sorting
 
 A python based file sorting application
